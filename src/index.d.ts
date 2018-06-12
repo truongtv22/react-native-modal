@@ -18,8 +18,8 @@ declare module "react-native-modal" {
     children: ReactNode;
     hideModalContentWhileAnimating?: boolean;
     isVisible: boolean;
-    deviceWidth: number;
-    deviceHeight: number;
+    deviceWidth?: number;
+    deviceHeight?: number;
     onModalShow?: () => void;
     onModalHide?: () => void;
     onBackButtonPress?: () => void;
