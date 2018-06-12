@@ -45,6 +45,8 @@ export class ReactNativeModal extends Component {
     backdropTransitionOutTiming: PropTypes.number,
     children: PropTypes.node.isRequired,
     isVisible: PropTypes.bool.isRequired,
+    deviceWidth: PropTypes.number,
+    deviceHeight: PropTypes.number,
     hideModalContentWhileAnimating: PropTypes.bool,
     onModalShow: PropTypes.func,
     onModalHide: PropTypes.func,
@@ -73,6 +75,8 @@ export class ReactNativeModal extends Component {
     onModalShow: () => null,
     onModalHide: () => null,
     isVisible: false,
+    deviceWidth: Dimensions.get("window").width,
+    deviceHeight: Dimensions.get("window").height,
     hideModalContentWhileAnimating: false,
     onBackdropPress: () => null,
     onBackButtonPress: () => null,
@@ -91,8 +95,8 @@ export class ReactNativeModal extends Component {
   state = {
     showContent: true,
     isVisible: false,
-    deviceWidth: Dimensions.get("window").width,
-    deviceHeight: Dimensions.get("window").height,
+    deviceWidth: this.props.deviceWidth,
+    deviceHeight: this.props.deviceHeight,
     isSwipeable: this.props.swipeDirection ? true : false,
     pan: null
   };
